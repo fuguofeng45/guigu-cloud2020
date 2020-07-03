@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-provider-payment8002</artifactId>
+    <artifactId>cloud-consumer-order80zk</artifactId>
     <dependencies>
         <!--包含了sleuth+zipkin-->
         <!--<dependency>
@@ -25,11 +25,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
+        <!-- <dependency>
+             <groupId>org.mybatis.spring.boot</groupId>
+             <artifactId>mybatis-spring-boot-starter</artifactId>
+         </dependency>-->
+        <!--<dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.10</version>
@@ -37,11 +37,11 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <dependency>
+        </dependency>-->
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
-        </dependency>
+        </dependency>-->
         <!--热部署devtools-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -64,11 +64,24 @@
             <artifactId>cloud-api-common</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <!--eureka client-->
+        <!--SpringBoot整合Zookeeper客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
+            <!--<exclusions>
+                &lt;!&ndash;先排除自带的zookeeper3.5.3&ndash;&gt;
+                <exclusion>
+                    <groupId>org.apache.zookeeper</groupId>
+                    <artifactId>zookeeper</artifactId>
+                </exclusion>
+            </exclusions>-->
         </dependency>
+        <!--&lt;!&ndash;添加zookeeper3.4.6版本&ndash;&gt;
+        <dependency>
+            <groupId>org.apache.zookeeper</groupId>
+            <artifactId>zookeeper</artifactId>
+            <version>3.4.6</version>
+        </dependency>-->
     </dependencies>
 
 </project>

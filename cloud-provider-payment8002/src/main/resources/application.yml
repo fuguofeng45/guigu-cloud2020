@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8002
 
 spring:
   application:
@@ -17,8 +17,11 @@ mybatis:
 
 eureka:
   client:
-    register-with-eureka: true                               #表示是否在自己注册金EurekaServer 默认为true
+    register-with-eureka: true                               #表示是否在自己注册EurekaServer 默认为true
     fetch-registry: true                                     #是否从EurekaServer抓取已有的注册信息 集群必须为true 才能配合Ribbon
     service-url:
       #defaultZone: http://localhost:7001/eureka              #eureka注册地址
       defaultZone: http://eureka7002.com:7002/eureka/, http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: payment8002 #主机名称
+    prefer-ip-address: true #访问路径显示ip地址

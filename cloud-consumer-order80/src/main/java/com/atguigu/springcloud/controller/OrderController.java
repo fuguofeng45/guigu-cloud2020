@@ -17,7 +17,12 @@ import javax.annotation.Resource;
 @Slf4j
 public class OrderController {
 
-    public static final String PAYMENT_URL = "http://localhost:8081";
+    /**
+     * 该url写死 如果是服务别名 那么可以通过LoadBalanced注解
+     * 实现负载均衡功能
+     */
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
+    /*public static final String PAYMENT_URL = "http://localhost:8001"; 改url被上面的url替代，用LoadBalanced注解RestTemplate上之后，再用服务别名修饰url可以动态实现负载均衡*/
 
     @Resource
     private RestTemplate restTemplate;

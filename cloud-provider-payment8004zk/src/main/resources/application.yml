@@ -1,0 +1,9 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: cloud-payment-servicezk
+  cloud:
+    zookeeper:
+      connect-string: localhost:2181     #zookeeper端口号
